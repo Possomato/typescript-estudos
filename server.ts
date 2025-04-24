@@ -1,11 +1,5 @@
-const car = {
-  brand: "Audi",
-  doors: 3
+function normalizeText(text: string){
+  return text.trim().toLowerCase()
 }
 
-function switchBrand(car: {brand: string; doors: number}){
-  car.brand = "Mercedes"
-}
-
-switchBrand(car)
-console.log(car)
+console.log(normalizeText(' GasdVr '))

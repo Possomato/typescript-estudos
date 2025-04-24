@@ -1,10 +1,5 @@
 "use strict";
-const car = {
-    brand: "Audi",
-    doors: 3
-};
-function switchBrand(car) {
-    car.brand = "Mercedes";
+function normalizeText(text) {
+    return text.trim().toLowerCase();
 }
-switchBrand(car);
-console.log(car);
+console.log(normalizeText(' GasdVr '));
