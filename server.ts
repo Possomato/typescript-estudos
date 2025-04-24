@@ -1,5 +1,11 @@
-function somar(a: number, b:number){
-  return(console.log(a + b))
+const car = {
+  brand: "Audi",
+  doors: 3
 }
 
-somar(6, 9)
+function switchBrand(car: {brand: string; doors: number}){
+  car.brand = "Mercedes"
+}
+
+switchBrand(car)
+console.log(car)

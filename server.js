@@ -1,5 +1,10 @@
 "use strict";
-function somar(a, b) {
-    return (console.log(a + b));
+const car = {
+    brand: "Audi",
+    doors: 3
+};
+function switchBrand(car) {
+    car.brand = "Mercedes";
 }
-somar(6, 9);
+switchBrand(car);
+console.log(car);
