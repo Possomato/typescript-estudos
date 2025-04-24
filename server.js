@@ -1,5 +1,23 @@
 "use strict";
-function normalizeText(text) {
-    return text.trim().toLowerCase();
+const input = document.querySelector('input');
+const response = document.querySelector('p');
+const inputLocal = localStorage.getItem('input');
+if (input && inputLocal) {
+    input.value = inputLocal;
+    handleCalculate(Number(inputLocal));
 }
-console.log(normalizeText(' GasdVr '));
+function valueChanged() {
+    if (input) {
+        let inputNumber = input.value;
+        localStorage.setItem('input', inputNumber);
+        handleCalculate(Number(inputNumber));
+    }
+}
+function handleCalculate(value) {
+    if (response) {
+        response.innerHTML = `result: ${value * 0.8 + 100}`;
+    }
+}
+if (input) {
+    input.addEventListener('keyup', valueChanged);
+}
