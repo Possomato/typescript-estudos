@@ -1,17 +1,37 @@
-class Product {
-  name: string
-  price: number
+class Book{
+  author: string
 
-  constructor(name: string, price: number){
-    this.name = name
-    this.price = price
-  }
-
-  priceReal() {
-    return`R$${this.price}`
+  constructor(author: string){
+    this.author = author
   }
 }
 
-const kindle = new Product('KINDLE', 800)
+class Chapters{
+  numberOfChapters: number
 
-console.log(kindle.priceReal())
+  constructor(numberOfChapters: number){
+    this.numberOfChapters = numberOfChapters
+  }
+}
+
+function searchProduct(search: string){
+  if(search === 'Odyssey'){
+    return new Book('Homero')
+  }
+
+  if(search === 'The Hobbit'){
+    return new Chapters(30)
+  }
+
+  return null
+}
+
+const newBook = searchProduct('The Hobbit')
+
+if(newBook instanceof Book){
+  console.log(newBook.author)
+}
+
+if(newBook instanceof Chapters){
+  console.log(newBook.numberOfChapters)
+}
