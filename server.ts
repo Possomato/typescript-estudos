@@ -1,11 +1,17 @@
-function toNumber(value: number | string){
-  if(typeof value === 'number'){
-    return value
-  } else if (typeof value === 'string'){
-    return Number(value)
-  } else{
-    throw 'error - value accepts only number or string'
+class Product {
+  name: string
+  price: number
+
+  constructor(name: string, price: number){
+    this.name = name
+    this.price = price
+  }
+
+  priceReal() {
+    return`R$${this.price}`
   }
 }
 
-console.log(toNumber(9))
+const kindle = new Product('KINDLE', 800)
+
+console.log(kindle.priceReal())

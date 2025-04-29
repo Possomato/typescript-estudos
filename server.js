@@ -1,13 +1,12 @@
 "use strict";
-function toNumber(value) {
-    if (typeof value === 'number') {
-        return value;
+class Product {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
     }
-    else if (typeof value === 'string') {
-        return Number(value);
-    }
-    else {
-        throw 'error - value accepts only number or string';
+    priceReal() {
+        return `R$${this.price}`;
     }
 }
-console.log(toNumber(9));
+const kindle = new Product('KINDLE', 800);
+console.log(kindle.priceReal());
